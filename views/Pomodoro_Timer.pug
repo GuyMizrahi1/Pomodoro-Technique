@@ -1,0 +1,86 @@
+doctype html
+html(lang = 'en')
+    head 
+        //- Icon
+        link(rel="icon", href="icon.png")
+        //-CSS Stylesheets
+        link(rel='stylesheet',type='text/css', href='Pomodoro_stylesheet.css')
+        //- JavaScript Stylesheet
+        script(src="Pomodoro_javascript.js") 
+        //- Bootstrap Scripts
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://getbootstrap.com/docs/5.2/assets/css/docs.css")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js") 
+        //- Title 
+        title Pomodoro Timer Technique
+
+        style.
+            body{
+            background-color: #dc3545;
+            }
+
+    body(onload="createTimer()")
+
+        nav.navbar.navbar-dark.bg-dark
+          .container-fluid
+            a.navbar-brand(href='/') P.T. Timers
+                        
+
+        .top-container
+            h1 Pomodoro Technique Timers
+            
+        #work.hidden
+            h5 #{work} 
+        #short_break.hidden 
+            h5 #{short_break}
+        #long_break.hidden 
+            h5 #{long_break}
+
+        //- status bar to notice in which part the client is in
+        .status-bar
+            ul#multi-steps.multi-steps
+                button#work-step.btn.btn-outline-dark(type='button' style='padding: 2%; margin:1%;') Work
+                button#short-step.btn.btn-outline-dark(type='button' style='padding: 2%; margin:1%;') Short-break
+                button#long-step.btn.btn-outline-dark(type='button' style='padding: 2%; margin:1%;') Long-break
+        
+        //- that div calls the timer functions from the timer.js file by id
+        #myTimer.my-pomodoro-container
+
+        .timer-buttons-container
+            button(src='Home_screen.js' onclick='startTimer()' style='background-color: #dc3545; border:none;')
+                img(src='play-fill.svg' onclick='startTimer()' alt='play' width='50' height='50')
+            button(src='Home_screen.js' onclick='stopTimer()' style='background-color: #dc3545; border:none; margin: 1%;')
+                img(src='pause-fill.svg' alt='pause' width='50' height='50')
+            button(src='Home_screen.js' onclick='restartButton()' style='background-color: #dc3545; border:none;')
+                img(src='replay-fill.svg' alt='replay' width='50' height='50' style='padding-top: 20%;')
+
+        //- start now modal
+        #id03.modal(style='text-align: center;')
+            form.modal-content.animate(action='/pomodoro-timer', method='post', style='background-color: #dc3545; width: 50%;')
+                .uppercontainer
+                    span.close(onclick="document.getElementById('id03').style.display='none'", title='Close Modal') &times;
+                .setup-container
+                    h1 Set Your Pomodoro
+                    p Please fill in this form to set your timer.
+                    hr
+                    .row(style='padding-bottom: 2%;')
+                        .col(style='text-align: right; padding-top: 5%;')
+                            h3 Work:
+                        .col(style='text-align: left;')
+                            label(for='Minute')
+                                b Minute
+                            input#workInputMinute.form-control(type='number', placeholder='MM', min='0', max='59', required='', style='width: 50%;')
+                    .row(style='padding-bottom: 2%;')
+                        .col(style='text-align: right')
+                            h3 Short Break:
+                        .col(style='text-align: left;')
+                            input#shortInputMinute.form-control(type='number', placeholder='MM', min='0', max='59', required='', style='width: 50%;')
+                    .row(style='padding-bottom: 2%;')
+                        .col(style='text-align: right')
+                            h3 Long Break:
+                        .col(style='text-align: left;')
+                            input#longInputMinute.form-control(type='number', placeholder='MM', min='0', max='59', required='', style='width: 50%;')
+                .container
+                    button#times_start_btn.btn.btn-outline-dark(type='submit', onclick='getTimeElements()', style='width: 40%; margin: 1%;') Set Timer
+                    a.btn.btn-outline-dark(onclick="document.getElementById('id03').style.display='none'", style='width: 40%; margin: 1%;', role='button') Cancel
+ 

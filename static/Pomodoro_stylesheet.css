@@ -1,0 +1,409 @@
+/* Google Fonts */
+@font-face {
+    font-family: 'Merriweather-BlackItalic';
+    src: url('fonts/Merriweather-BlackItalic.ttf')format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-light';
+    src: url('fonts/Montserrat-light.ttf') format('truetype');
+}
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+} 
+body{
+    background-color: #dc3545;
+    min-height: 100%;
+    margin: 0;
+}
+
+.navbar-brand{
+    font-family: 'Merriweather-BlackItalic', sans-serif;
+}
+.nav-link.active{
+    color: #f8f9fa;
+    background: #212529;
+}
+.top-container {
+    padding: 3% 10% 0% 10%;
+    height: fit-content;
+    text-align: center;
+    background-color: #dc3545;
+}
+.top-container h1{
+    font-family: 'Merriweather-BlackItalic', sans-serif;
+    text-decoration: underline #212529;
+    background-color: #dc3545;
+}
+.top-container h2{
+    padding-top: 5%;
+    font-family: 'Montserrat-SemiBold', sans-serif; 
+    background-color: #dc3545;
+}
+.button-animate-container{
+    padding: 10%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #dc3545;
+}
+.setup-container{
+    text-align: center;
+}
+.row{
+    display: table;
+    text-align: center;
+    padding: 0% 5% 10% 5%;
+}
+.col{
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+.row-set{
+    display: table;
+    text-align: center;
+    padding-bottom: 2%;
+}
+/* start position of the left pomodoro*/
+.left-p{
+    transform: rotate(340deg);
+    float: inline-start;
+}
+/* call for the animation by mouseover */
+.left-p:hover {
+    animation: shakeLeft 0.5s;
+    animation-iteration-count: infinite;
+}
+/* animation of left pomodoro */
+@keyframes shakeLeft {
+    0% { transform: translate(1px, 1px) rotate(340deg); }
+    10% { transform: translate(-1px, -2px) rotate(339deg); }
+    20% { transform: translate(-3px, 0px) rotate(341deg); }
+    30% { transform: translate(3px, 2px) rotate(340deg); }
+    40% { transform: translate(1px, -1px) rotate(341deg); }
+    50% { transform: translate(-1px, 2px) rotate(339deg); }
+    60% { transform: translate(-3px, 1px) rotate(340deg); }
+    70% { transform: translate(3px, 1px) rotate(339deg); }
+    80% { transform: translate(-1px, -1px) rotate(341deg); }
+    90% { transform: translate(1px, 2px) rotate(340deg); }
+    100% { transform: translate(1px, -2px) rotate(339deg); }
+}
+
+/* three buttons in the middle of the homescreen*/
+.buttons{
+    /* top | right | bottom | left */
+    /* padding: 20% 10% 20% 10%; */
+    height: fit-content;
+    text-align: center;
+    min-width: 150px;
+    vertical-align: middle;
+    background-color: #dc3545;
+}
+/* start position of the right pomodoro*/
+.right-p{
+    transform: rotate(20deg);
+    float: inline-end;
+}
+/* call for the animation by mouseover */
+.right-p:hover {
+    animation: shakeRight 0.5s;
+    animation-iteration-count: infinite;
+}
+/* animation of right pomodoro */
+@keyframes shakeRight {
+    0% { transform: translate(1px, 1px) rotate(20deg); }
+    10% { transform: translate(-1px, -2px) rotate(19deg); }
+    20% { transform: translate(-3px, 0px) rotate(21deg); }
+    30% { transform: translate(3px, 2px) rotate(20deg); }
+    40% { transform: translate(1px, -1px) rotate(21deg); }
+    50% { transform: translate(-1px, 2px) rotate(19deg); }
+    60% { transform: translate(-3px, 1px) rotate(20deg); }
+    70% { transform: translate(3px, 1px) rotate(19deg); }
+    80% { transform: translate(-1px, -1px) rotate(21deg); }
+    90% { transform: translate(1px, 2px) rotate(20deg); }
+    100% { transform: translate(1px, -2px) rotate(19deg); }
+}
+
+/* Slideshow container (at the bottom of the homescreen)*/
+.slideshow-container {
+position: relative;
+color: #f8f9fa;
+background: #212529;
+min-height: 60vh;
+/* display: inline-flex; */
+}
+/* Slides */
+.mySlides  {
+display: none;
+height: 60vh;
+/* top | right | bottom | left */
+padding: 2% 10% 2% 10%;
+}
+.mySlides h2{
+    font-family: 'Merriweather-BlackItalic', sans-serif;
+    text-decoration: underline #f8f9fa;
+    /* top | right | bottom | left */
+    padding: 5% 0% 5% 0%;
+    margin: 0%;
+    height: fit-content;
+    text-align: center;
+}
+.mySlides h3{
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    padding-bottom: 5%;
+    height: fit-content;
+    text-align: center;
+} 
+.mySlides h4{
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    padding-bottom: 5%;
+    height: fit-content;
+} 
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 200%;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    text-decoration: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color:#888;
+    color: #212529;
+}
+
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 1%;
+    color: #888;
+    background: #212529;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+    background:#717171;
+    transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot means end position*/
+.active, .dot:hover {
+    background-color: #f8f9fa;
+}
+
+/* The Modal (background): sign in & sign up & start now & alert*/
+.modal {
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    background-color: #dc3545;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+}
+
+/* Center the image and position the close button */
+.uppercontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+/* sign in modal */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 20%; /* Could be more or less, depending on screen size */
+}
+
+/* checkbox */
+.dark-input{
+    accent-color: #212529;
+}
+
+/* The Close Button in modals (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* The Close Button in modals (x) */
+.close:hover, .close:focus {
+    color: white;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation of modal opening*/
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/******************** status bar ********************/
+/* show status on the timer page*/
+.multi-steps{
+    margin: 2% 5% 2% 5%;
+    text-align: center;
+}
+
+.timer-buttons-container{
+    margin: 0% 20% 0% 20%;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+/******************** timer ********************/
+/* centering the timer */
+.my-pomodoro-container {
+    font-family: sans-serif;
+    display: grid;
+    vertical-align: text-top;
+    height: 50vh;
+    place-items: center;
+  }
+/* keep it in the same size both for cellphone & pc */
+.base-timer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+  
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+/* creat the grey perimeter of the circle  */
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+/* creat the path for the circle by time*/
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+  /* colors by state */
+.base-timer__path-remaining.green {
+    color: #198754;
+}
+.base-timer__path-remaining.yellow {
+    color: #ffc107;
+} 
+.base-timer__path-remaining.red {
+    color: #dc3545;
+}
+/* time label pixed size as the circle itself */
+.base-timer__label {
+    position: absolute;
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+.hidden{ display:none;}

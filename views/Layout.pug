@@ -1,0 +1,84 @@
+doctype html
+html(lang = 'en')
+    head 
+        //- Icon
+        link(rel="icon", href="icon.png")
+        //-CSS Stylesheets
+        link(rel='stylesheet',type='text/css', href='Pomodoro_stylesheet.css')
+        //- JavaScript Stylesheet
+        script(defer, src="Pomodoro_javascript.js") 
+        //- Bootstrap Scripts
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://getbootstrap.com/docs/5.2/assets/css/docs.css")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js") 
+        //- Title 
+        title Pomodoro Timer Technique
+
+        style.
+            body{
+            background-color: #dc3545;
+            }
+
+    body(onload='showSlides(1)')
+
+        header 
+            block header_content 
+        
+        block content
+        
+        footer
+            //- Slideshow container
+            #slideshow-container.slideshow-container
+                //- Full-width slides
+                .mySlides(style='height: fit-content;')
+                    h2 What is it?
+                    h3
+                        | The Pomodoro Technique is a time management method that can be used for any task.
+                        br
+                        |                     The anxiety triggered by &ldquo;the ticking clock&rdquo;,
+                        |                     especially when it involves a deadline, leads to ineffective work and study habits which in turn lead to procrastination.
+                        br
+                        |                     The aim of the Pomodoro Technique is to use time as a valuable ally in accomplishing what we want to do in the way we want to do it,
+                        |                     and to enable us to improve continually the way we work or study.
+                .mySlides(style='height: fit-content;')
+                    h2 The Basics
+                    h4
+                        | At the beginning of each day select the tasks you need to complete and put them on a TODO list
+                        br
+                        br
+                        |                     Start working:
+                        br
+                        br
+                        |                     1.Choose a task to be accomplished.
+                        br
+                        |                     2.Set the Pomodoro timer to an apropriate time interval.
+                        br
+                        |                     3.Work until the Pomodoro rings.
+                        br
+                        |                     4.Take a short break untill the next ring.
+                        br
+                        |                     5.Take a long break every 4 Pomodoro sessions.
+                .mySlides(style='height: fit-content;')
+                    h2 Rules &amp; Tips
+                    h4
+                        | - If a task takes more than 5-7 Pomodoros, break it down.
+                        br
+                        |                     - If it takes less than one Pomodoro, add it up, and combine it with another task.
+                        br
+                        |                     - Once a Pomodoro begins, it has to ring.
+                        br
+                        |                     - The next Pomodoro will go better.
+                        br
+                        |                     - Login to the service and check the Wisdom of the crowd.
+                        br
+                        |                     - The Pomodoro Technique shouldn&apos;t be used for activities you do in your free time.
+                        br
+                        |                     Enjoy free time!
+                //- Next/prev buttons
+                a.prev(onclick='plusSlides(-1)') &#x276E;
+                a.next(onclick='plusSlides(1)') &#x276F;
+                //- Dots/bullets/indicators
+            .dot-container
+                span.dot(onclick='currentSlide(1)')
+                span.dot(onclick='currentSlide(2)')
+                span.dot(onclick='currentSlide(3)')
